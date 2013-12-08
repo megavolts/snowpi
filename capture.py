@@ -1,4 +1,16 @@
 #!/usr/bin/python2
+#
+# SnowPI
+#
+# Marc Oggier
+# Simon Filhol
+#
+# Updated December 9, 2013
+# Version 2.0
+#
+#
+#
+
 import serial
 import time
 import os
@@ -11,14 +23,14 @@ import os
 fl = open("log.log", "a")
 #arduino = serial.Serial('/dev/ttyAMA0',9600)
 arduino = serial.Serial('/dev/ttyACM0',9600)
-time.sleep(2)
+time.sleep(1)
 arduino.write('u')
 fl.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) +"\tUSB ON\n")
 time.sleep(5)
 arduino.write('y')
 fl.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) +"\tLED ON\n")
 time.sleep(1)
-os.system("./snap.sh")
+os.system("./snap.sh /mnt/data/pics")
 fl.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) +"\ttaking picture\n")
 time.sleep(5)
 arduino.write('d');
@@ -49,3 +61,5 @@ f.write(temp)
 f.close()
 # Closing log file
 fl.close()
+
+
