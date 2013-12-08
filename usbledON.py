@@ -12,7 +12,7 @@ import os
 arduino = serial.Serial('/dev/ttyACM0',9600)
 f = open("log.log","a")
 time.sleep(2)
-arduino.write('d')
+arduino.write('u')
 time.sleep(5)
 f.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) +"\tUSB ON\n")
 arduino.write('y')
