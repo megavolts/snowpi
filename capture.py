@@ -15,7 +15,7 @@ import serial
 import time
 import os
 
-dir='/mnt/data/test'
+dir='/mnt/data/data'
 
 #locations=['/dev/ttyACM0','/dev/ttyACM1','/dev/ttyACM2','/dev/ttyACM3', '/dev/ttyS0','/dev/ttyS1','/dev/ttyS2','/dev/ttyS3'] 
 #for device in locations:device
@@ -23,7 +23,7 @@ dir='/mnt/data/test'
 #        print "Trying...", device
 #        arduino = serial.Serial(device,9600)
 #        break
-fl = open("log.log", "a")
+fl = open(dir+"/log.log", "a")
 #arduino = serial.Serial('/dev/ttyAMA0',9600)
 arduino = serial.Serial('/dev/ttyACM0',9600)
 time.sleep(2)

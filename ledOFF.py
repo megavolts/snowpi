@@ -10,7 +10,8 @@ import os
 #        break
 #arduino = serial.Serial('/dev/ttyAMA0',9600)
 arduino = serial.Serial('/dev/ttyACM0',9600)
-f = open("log.log","a")
+dir='/mnt/data/data'
+f = open(dir+"/log.log","a")
 time.sleep(2)
 arduino.write('n')
 f.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) +"\tLED OFF\n")
